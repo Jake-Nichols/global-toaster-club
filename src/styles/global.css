@@ -1,21 +1,28 @@
 @tailwind base;
 
-a {
-  @apply text-blue-700;
+h1, h3 {
+  text-shadow: 4px 0 #000, -4px 0 #000, 0 4px #000, 0 -4px #000,
+               2px 2px #000, -2px -2px #000, 2px -2px #000, -2px 2px #000;
 }
 
-a:hover {
-  @apply border-b-2 border-blue-700;
+strong {
+  font-weight: 900;
 }
 
 @tailwind components;
 
 @tailwind utilities;
 
-.content p {
-  @apply my-6;
+@keyframes ticker-kf {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-9327px, 0, 0);
+  }
 }
 
-.content ul {
-  @apply my-6;
+.img-ticker {
+  animation: ticker-kf 35s linear infinite;
 }

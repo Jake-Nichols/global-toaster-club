@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
+import Logo from '@/components/Logo';
 import { AppConfig } from '@/utils/AppConfig';
 
 type IMainProps = {
@@ -9,68 +10,65 @@ type IMainProps = {
 };
 
 const Main = (props: IMainProps) => (
-  <div className="w-full px-1 text-gray-700 antialiased">
+  <div className="w-full text-gray-100 antialiased">
     {props.meta}
 
-    <div className="mx-auto max-w-screen-md">
-      <header className="border-b border-gray-300">
-        <div className="pt-16 pb-8">
-          <h1 className="text-3xl font-bold text-gray-900">
-            {AppConfig.title}
-          </h1>
-          <h4 className="text-xl">{AppConfig.description}</h4>
-        </div>
-        <nav>
-          <ul className="flex flex-wrap text-xl">
-            <li className="mr-6">
-              <Link
-                href="/"
-                className="border-none text-gray-700 hover:text-gray-900"
-              >
-                Home
-              </Link>
-            </li>
-            <li className="mr-6">
-              <Link
-                href="/about/"
-                className="border-none text-gray-700 hover:text-gray-900"
-              >
-                About
-              </Link>
-            </li>
-            <li className="mr-6">
-              <a
-                className="border-none text-gray-700 hover:text-gray-900"
-                href="https://github.com/ixartz/Next-js-Boilerplate"
-              >
-                GitHub
-              </a>
-            </li>
-            <li className="mr-6">
-              <Link
-                href="/blog/"
-                className="border-none text-gray-700 hover:text-gray-900"
-              >
-                Blog
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
+    <header className="z-10 w-full bg-black/10">
+      <nav>
+        <ul className="mx-auto grid h-[157px] max-w-screen-xl grid-cols-7 items-center justify-between gap-6 text-center text-lg">
+          <li className="">
+            <Link href="/" className="text-secondary hover:text-white">
+              Buy a GTC
+            </Link>
+          </li>
+          <li className="">
+            <Link href="/about/" className="text-secondary hover:text-white">
+              Background
+            </Link>
+          </li>
+          <li className="">
+            <Link className="text-secondary hover:text-white" href="/">
+              The Team
+            </Link>
+          </li>
+          <li className="relative px-20 ">
+            <Link href="/blog/" className="text-secondary">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[-35%]">
+                <Logo />
+              </div>
+            </Link>
+          </li>
+          <li className="">
+            <Link href="/blog/" className="text-secondary hover:text-white">
+              Merch
+            </Link>
+          </li>
+          <li className="">
+            <Link href="/blog/" className="text-secondary hover:text-white">
+              Social
+            </Link>
+          </li>
+          <li className="">
+            <Link href="/blog/" className="text-secondary hover:text-white">
+              Drops
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-      <main className="content py-5 text-xl">{props.children}</main>
+    <main className="text-xl">{props.children}</main>
 
-      <footer className="border-t border-gray-300 py-8 text-center text-sm">
-        © Copyright {new Date().getFullYear()} {AppConfig.title}. Made with{' '}
-        <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>.
-        {/*
-         * PLEASE READ THIS SECTION
-         * I'm an indie maker with limited resources and funds, I'll really appreciate if you could have a link to my website.
-         * The link doesn't need to appear on every pages, one link on one page is enough.
-         * For example, in the `About` page. Thank you for your support, it'll mean a lot to me.
-         */}
-      </footer>
-    </div>
+    <footer className="bg-black px-20 py-8 text-right text-xs text-secondary">
+      © {AppConfig.title} {new Date().getFullYear()}
+      {/* <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>. */}
+      {/*
+       * PLEASE READ THIS SECTION
+       * I'm an indie maker with limited resources and funds, I'll really appreciate if you could have a link to my website.
+       * The link doesn't need to appear on every pages, one link on one page is enough.
+       * For example, in the `About` page. Thank you for your support, it'll mean a lot to me.
+       */}
+    </footer>
   </div>
 );
 
