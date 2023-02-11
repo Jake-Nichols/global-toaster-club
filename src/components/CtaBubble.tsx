@@ -4,8 +4,7 @@ import * as React from 'react';
 const CtaBubble = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={522}
-    height={467}
+    viewBox="0, 0, 522, 467"
     fill="none"
     {...props}
   >

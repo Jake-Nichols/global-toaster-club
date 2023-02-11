@@ -37,6 +37,30 @@ const Index = () => {
       name: 'NFT 3',
       category: 'Groceries',
     },
+    {
+      id: '3',
+      src: '/images/Almondnuts.jpg',
+      name: 'NFT 3',
+      category: 'Groceries',
+    },
+    {
+      id: '3',
+      src: '/images/Almondnuts.jpg',
+      name: 'NFT 3',
+      category: 'Groceries',
+    },
+    {
+      id: '3',
+      src: '/images/Almondnuts.jpg',
+      name: 'NFT 3',
+      category: 'Groceries',
+    },
+    {
+      id: '3',
+      src: '/images/Almondnuts.jpg',
+      name: 'NFT 3',
+      category: 'Groceries',
+    },
   ];
 
   const [visible, setVisible] = useState(7);
@@ -52,12 +76,7 @@ const Index = () => {
 
   return (
     <Main
-      meta={
-        <Meta
-          title="Next.js Boilerplate Presentation"
-          description="Next js Boilerplate is the perfect starter code for your project. Build your React application with the Next.js framework."
-        />
-      }
+      meta={<Meta title="Global Toaster Club" description="Meta Description" />}
     >
       <section className="mx-auto max-w-screen-xl pt-8">
         <h1 className="mx-auto mt-8 text-center text-[74px] font-black leading-[0.80] tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:mt-16 lg:w-[900px] lg:text-[194px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
@@ -68,8 +87,15 @@ const Index = () => {
         </h2>
       </section>
 
-      <section className="">
-        <div className="mx-auto hidden max-w-screen-xl auto-rows-auto gap-4 p-8 lg:grid lg:grid-cols-4 lg:px-0">
+      <section>
+        <div className="relative mx-auto hidden max-w-screen-xl auto-rows-auto gap-4 p-8 lg:grid lg:grid-cols-4 lg:px-0">
+          <div className="absolute left-[-150px] top-[-150px] -scale-x-100">
+            <SingleToaster />
+          </div>
+
+          <div className="absolute left-[-475px] top-[235px] -scale-x-100">
+            <SingleToaster />
+          </div>
           {imagePlaceholders?.map((placeholder) => (
             <div
               className="aspect-[3/4] border-8 border-white"
@@ -78,7 +104,14 @@ const Index = () => {
               {placeholder.name}
             </div>
           ))}
-          <div className="aspect-[3/4]">Buy NFTs</div>
+          <div id="buy" className="flex flex-col items-end">
+            <div className="flex w-full justify-center pt-8 lg:pt-0">
+              <SingleToaster />
+            </div>
+            <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:drop-shadow-[0px_4px_8px_#00000080] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]">
+              Buy <strong>NFTs</strong>
+            </button>
+          </div>
         </div>
 
         <div className="mx-auto grid auto-rows-auto gap-4 p-8 lg:hidden lg:px-0">
@@ -91,15 +124,15 @@ const Index = () => {
             </div>
           ))}
           <button
-            className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]"
+            className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:drop-shadow-[0px_4px_8px_#00000080] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]"
             onClick={showMoreItems}
           >
             Load More
           </button>
-          <div className="flex justify-center">
+          <div id="buy" className="flex justify-center">
             <SingleToaster />
           </div>
-          <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]">
+          <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:drop-shadow-[0px_4px_8px_#00000080] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]">
             Buy <strong>NFTs</strong>
           </button>
         </div>
@@ -155,12 +188,15 @@ const Index = () => {
       </section>
 
       <section className="relative my-16">
-        <div className="mx-auto flex max-w-screen-lg flex-row before:absolute before:right-0 before:-bottom-12 before:z-[-1] before:h-[489px] before:w-[1440px] before:bg-gradient-to-r before:from-[#EEB5AB00] before:to-[#EEB5AB]">
+        <div className="mx-auto flex max-w-screen-lg flex-row before:absolute before:right-0 before:-bottom-12 before:z-[-1] before:h-[489px] before:w-[1440px] before:bg-gradient-to-r before:from-[#EEB5AB00] before:to-[#EEB5AB] 2xl:before:w-[1771px]">
+          <div className="absolute left-[-79px] top-[230px] hidden -scale-x-100 2xl:block">
+            <SingleToaster />
+          </div>
           <div className="hidden w-1/2 md:block lg:w-full">
             <Toaster />
           </div>
           <div className="w-full overflow-hidden lg:w-1/2 lg:overflow-visible lg:pl-12 xl:w-full">
-            <div className="relative -left-16 lg:-left-24">
+            <div className="relative -left-16 w-[133%] lg:-left-24 lg:w-full">
               <CtaBubble />
             </div>
             <p className="px-10 text-2xl text-black">
@@ -171,11 +207,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-8">
+      <section className="py-8" id="background">
         <h3 className="mx-auto max-w-screen-xl text-center text-[45px] font-black tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:text-[170px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
           BACKGROUND
         </h3>
-        <div className="mx-auto max-w-screen-lg px-8">
+        <div
+          className={`relative mx-auto max-w-screen-lg bg-[40%] bg-no-repeat px-8 lg:bg-[url('/assets/images/background-background.png')] lg:bg-center`}
+        >
           <p className="py-4">
             In the late 90&apos;s three like-minded individuals formed the{' '}
             <strong>‘Toasters’</strong>, and they promoted their graffiti
@@ -252,12 +290,19 @@ const Index = () => {
             </span>{' '}
             original. To ensure your Rarity value.
           </p>
+
+          <div className="absolute right-[-579px] bottom-[-250px] hidden 2xl:block">
+            <SingleToaster />
+          </div>
         </div>
       </section>
 
       <section>
-        <div className="mx-auto mt-[33px] max-w-[1440px] bg-[#0d0a0aa8] px-8 pb-8 lg:mt-[135px] lg:bg-inherit lg:bg-gradient-to-t lg:from-[#1D1D1B00] lg:to-[#0d0a0aa8] lg:px-20 lg:pb-0">
-          <div className="relative top-[-33px] mx-auto max-w-screen-xl lg:top-[-135px]">
+        <div className="mx-auto mt-[33px] max-w-[1440px] bg-[#0d0a0aa8] px-8 pb-8 lg:mt-[133px] lg:bg-inherit lg:bg-gradient-to-t lg:from-[#1D1D1B00] lg:to-[#0d0a0aa8] lg:px-20 lg:pb-0">
+          <div
+            id="team"
+            className="relative top-[-33px] mx-auto max-w-screen-xl lg:top-[-135px]"
+          >
             <h3 className="text-center text-[45px] font-black tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:text-[170px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
               THE TEAM
             </h3>
@@ -267,10 +312,10 @@ const Index = () => {
               and <strong>Joe</strong>. All 3 have had Toaster Takeovers this is
               what brought the team together.{' '}
             </p>
-            <div>
+            <div className="relative">
               <Swiper
                 modules={[A11y]}
-                spaceBetween={0}
+                spaceBetween={18}
                 loop={true}
                 breakpoints={{
                   // when window width is >= 320px
@@ -279,10 +324,6 @@ const Index = () => {
                   },
                   // when window width is >= 480px
                   768: {
-                    slidesPerView: 2,
-                  },
-                  // when window width is >= 640px
-                  1024: {
                     slidesPerView: 3,
                   },
                 }}
@@ -290,7 +331,15 @@ const Index = () => {
                 <SwiperSlide>
                   <div className="aspect-[3/4] border-8 border-white lg:mx-4"></div>
                   <div className="mt-10 grid gap-8 px-0 pt-2 pb-8 text-center lg:px-10">
-                    <h4 className="font-black text-secondary">Jake</h4>
+                    <div className="z-10 flex w-full items-center justify-between text-secondary md:hidden lg:hidden">
+                      <SwiperPrev />
+                      <h4 className="font-black text-secondary">Jake</h4>
+                      <SwiperNext />
+                    </div>
+
+                    <h4 className="hidden font-black text-secondary md:block">
+                      Jake
+                    </h4>
 
                     <p>
                       Apart from having the amazing ability eat a mountain and
@@ -305,7 +354,15 @@ const Index = () => {
                 <SwiperSlide>
                   <div className="aspect-[3/4] border-8 border-white lg:mx-4"></div>
                   <div className="mt-10 grid gap-8 px-0 pt-2 pb-8 text-center lg:border-x-2 lg:border-secondary lg:px-10">
-                    <h4 className="font-black text-secondary">Jake</h4>
+                    <div className="z-10 flex w-full items-center justify-between text-secondary md:hidden lg:hidden">
+                      <SwiperPrev />
+                      <h4 className="font-black text-secondary">Jake</h4>
+                      <SwiperNext />
+                    </div>
+
+                    <h4 className="hidden font-black text-secondary md:block">
+                      Jake
+                    </h4>
 
                     <p>
                       Apart from having the amazing ability eat a mountain and
@@ -320,7 +377,15 @@ const Index = () => {
                 <SwiperSlide>
                   <div className="aspect-[3/4] border-8 border-white lg:mx-4"></div>
                   <div className="mt-10 grid gap-8 px-0 pt-2 pb-8 text-center lg:px-10">
-                    <h4 className="font-black text-secondary">Jake</h4>
+                    <div className="z-10 flex w-full items-center justify-between text-secondary md:hidden lg:hidden">
+                      <SwiperPrev />
+                      <h4 className="font-black text-secondary">Jake</h4>
+                      <SwiperNext />
+                    </div>
+
+                    <h4 className="hidden font-black text-secondary md:block">
+                      Jake
+                    </h4>
 
                     <p>
                       Apart from having the amazing ability eat a mountain and
@@ -331,11 +396,6 @@ const Index = () => {
                     <p>Jake also looks after the technical needs of the GTC.</p>
                   </div>
                 </SwiperSlide>
-
-                <div className="absolute bottom-[265px] z-10 flex w-full justify-between text-secondary lg:hidden">
-                  <SwiperPrev />
-                  <SwiperNext />
-                </div>
               </Swiper>
             </div>
           </div>
@@ -343,12 +403,15 @@ const Index = () => {
       </section>
 
       <section className="bg-secondary">
-        <div className="mx-auto max-w-[1440px] px-8 pt-[95px] lg:mt-[135px] lg:px-20 lg:pt-0">
-          <div className="relative top-[-135px] mx-auto max-w-screen-xl">
+        <div className="mx-auto max-w-[1440px] bg-[url('/assets/images/background-background.png')] bg-[length:140%] bg-bottom bg-no-repeat px-8 pt-[95px] lg:mt-[135px] lg:bg-[length:33%] lg:bg-repeat-x lg:px-20 lg:pt-0">
+          <div
+            id="merch"
+            className="relative top-[-135px] mx-auto max-w-screen-xl"
+          >
             <h3 className="pb-8 text-center text-[45px] font-black tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:pb-0 lg:text-[170px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
               MERCH
             </h3>
-            <div className="mx-auto grid max-w-[1096px] gap-8 pb-16 text-center text-black">
+            <div className="mx-auto grid max-w-[1096px] gap-8 pb-16 text-center text-black lg:pb-28">
               <p>
                 Our last Merch run was such a success that we are still printing
                 garments. Unfortunately currently unable to keep up with demand.{' '}
@@ -419,7 +482,10 @@ const Index = () => {
 
       <section>
         <div className="mx-auto max-w-[1440px] bg-primary px-8 pt-[100px] lg:px-20 lg:pt-0 lg:pb-10">
-          <div className="relative top-[-135px] mx-auto max-w-screen-xl">
+          <div
+            id="social"
+            className="relative top-[-135px] mx-auto max-w-screen-xl"
+          >
             <h3 className="pb-8 text-center text-[45px] font-black tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:pb-0 lg:text-[170px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
               SOCIAL
             </h3>
@@ -439,7 +505,10 @@ const Index = () => {
 
       <section className="bg-[#2B5C71]">
         <div className="mx-auto max-w-[1440px] px-8 pt-[140px] lg:px-20 lg:pt-10">
-          <div className="relative top-[-175px] mx-auto h-[550px] max-w-screen-xl text-center lg:h-auto">
+          <div
+            id="drops"
+            className="relative top-[-175px] mx-auto h-[600px] max-w-screen-xl text-center lg:h-[350px]"
+          >
             <h3 className="pb-8 text-[45px] font-black tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:pb-0 lg:text-[170px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
               DROPS
             </h3>
@@ -453,8 +522,16 @@ const Index = () => {
             <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]">
               Buy <strong>NFTs</strong>
             </button>
-            <div className="flex justify-center pt-8 lg:pt-0">
+            <div className="flex justify-center pt-8 lg:hidden lg:pt-0">
               <SingleToaster />
+            </div>
+            <div className="absolute top-0 right-[-10px] hidden w-full flex-col items-end justify-end px-32 lg:flex">
+              <div className="relative w-1/4">
+                <CtaBubble />
+              </div>
+              <div className="flex w-1/4 justify-center">
+                <SingleToaster />
+              </div>
             </div>
           </div>
         </div>

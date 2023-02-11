@@ -18,48 +18,6 @@ const Main = (props: IMainProps) => {
       {props.meta}
 
       <header className="z-10 w-full bg-black/10">
-        {/* <nav>
-          <ul className="mx-auto grid h-[157px] max-w-screen-xl grid-cols-7 items-center justify-between gap-6 text-center text-lg">
-            <li className="">
-              <Link href="/" className="text-secondary hover:text-white">
-                Buy a GTC
-              </Link>
-            </li>
-            <li className="">
-              <Link href="/about/" className="text-secondary hover:text-white">
-                Background
-              </Link>
-            </li>
-            <li className="">
-              <Link className="text-secondary hover:text-white" href="/">
-                The Team
-              </Link>
-            </li>
-            <li className="relative px-20 ">
-              <Link href="/blog/" className="text-secondary">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[-35%]">
-                  <Logo />
-                </div>
-              </Link>
-            </li>
-            <li className="">
-              <Link href="/blog/" className="text-secondary hover:text-white">
-                Merch
-              </Link>
-            </li>
-            <li className="">
-              <Link href="/blog/" className="text-secondary hover:text-white">
-                Social
-              </Link>
-            </li>
-            <li className="">
-              <Link href="/blog/" className="text-secondary hover:text-white">
-                Drops
-              </Link>
-            </li>
-          </ul>
-        </nav> */}
-
         <nav className="w-full">
           <div className="mx-auto justify-between px-4 lg:max-w-screen-xl lg:justify-center">
             <div className="lg:hidden">
@@ -111,25 +69,34 @@ const Main = (props: IMainProps) => {
               >
                 <ul className="items-center justify-center space-y-4 text-center text-2xl lg:grid lg:h-[157px] lg:grid-cols-7 lg:gap-6 lg:space-y-0">
                   <li className="">
-                    <Link href="/" className="text-secondary hover:text-white">
+                    <Link
+                      href="#buy"
+                      className="text-secondary hover:text-white"
+                      scroll={false}
+                    >
                       Buy a GTC
                     </Link>
                   </li>
                   <li className="">
                     <Link
-                      href="/about/"
+                      href="#background"
                       className="text-secondary hover:text-white"
+                      scroll={false}
                     >
                       Background
                     </Link>
                   </li>
                   <li className="">
-                    <Link className="text-secondary hover:text-white" href="/">
+                    <Link
+                      className="text-secondary hover:text-white"
+                      href="#team"
+                      scroll={false}
+                    >
                       The Team
                     </Link>
                   </li>
                   <li className="relative hidden px-20 lg:block">
-                    <Link href="/blog/" className="text-secondary">
+                    <Link href="/" className="text-secondary">
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[-35%]">
                         <Logo />
                       </div>
@@ -137,24 +104,27 @@ const Main = (props: IMainProps) => {
                   </li>
                   <li className="">
                     <Link
-                      href="/blog/"
+                      href="#merch"
                       className="text-secondary hover:text-white"
+                      scroll={false}
                     >
                       Merch
                     </Link>
                   </li>
                   <li className="">
                     <Link
-                      href="/blog/"
+                      href="#social"
                       className="text-secondary hover:text-white"
+                      scroll={false}
                     >
                       Social
                     </Link>
                   </li>
                   <li className="">
                     <Link
-                      href="/blog/"
+                      href="#drops"
                       className="text-secondary hover:text-white"
+                      scroll={false}
                     >
                       Drops
                     </Link>

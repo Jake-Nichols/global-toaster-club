@@ -1,12 +1,16 @@
 @tailwind base;
 
+html, body {
+  scroll-behavior: smooth;
+}
+
 h1, h3 {
   text-shadow: 4px 0 #000, -4px 0 #000, 0 4px #000, 0 -4px #000,
                2px 2px #000, -2px -2px #000, 2px -2px #000, -2px 2px #000;
 }
 
 strong {
-  font-weight: 900;
+  @apply font-black;
 }
 
 @tailwind components;
