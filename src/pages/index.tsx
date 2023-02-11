@@ -3,16 +3,52 @@ import 'swiper/css/navigation';
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { A11y, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import CtaBubble from '@/components/CtaBubble';
+import SingleToaster from '@/components/SingleToaster';
+import SwiperNext from '@/components/SwiperNext';
+import SwiperPrev from '@/components/SwiperPrev';
 import Toaster from '@/components/Toaster';
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 
 const Index = () => {
   const router = useRouter();
+
+  const imagePlaceholders = [
+    {
+      id: '1',
+      src: '/images/100p.jpeg',
+      name: 'NFT 1',
+      category: 'Groceries',
+    },
+    {
+      id: '2',
+      src: '/images/Ajinomoto.jpeg',
+      name: 'NFT 2',
+      category: 'Groceries',
+    },
+    {
+      id: '3',
+      src: '/images/Almondnuts.jpg',
+      name: 'NFT 3',
+      category: 'Groceries',
+    },
+  ];
+
+  const [visible, setVisible] = useState(7);
+  const [visibleOther, setVisibleOther] = useState(2);
+
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 7);
+  };
+
+  const showMoreItemsOther = () => {
+    setVisibleOther((prevValue) => prevValue + 2);
+  };
 
   return (
     <Main
@@ -24,44 +60,63 @@ const Index = () => {
       }
     >
       <section className="mx-auto max-w-screen-xl pt-8">
-        <h1 className="mx-auto mt-16 w-[900px] text-center text-[194px] font-black leading-[0.80] tracking-tight drop-shadow-[0_3px_16px_#0D0A0A]">
+        <h1 className="mx-auto mt-8 text-center text-[74px] font-black leading-[0.80] tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:mt-16 lg:w-[900px] lg:text-[194px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
           GLOBAL TOASTER CLUB
         </h1>
-        <h2 className="pt-16 pb-8 text-center text-5xl font-black tracking-tight">
+        <h2 className="py-8 text-center text-xl font-black tracking-tight lg:pt-16 lg:text-5xl">
           <span className="text-secondary">The London Drop</span> - Coming Soon
         </h2>
       </section>
 
-      <section className="mx-auto grid max-w-screen-xl auto-rows-auto grid-cols-4 gap-4 py-8">
-        <div className="aspect-[3/4] border-8 border-white"></div>
-        <div className="aspect-[3/4] border-8 border-white"></div>
-        <div className="aspect-[3/4] border-8 border-white"></div>
-        <div className="aspect-[3/4] border-8 border-white"></div>
-        <div className="aspect-[3/4] border-8 border-white"></div>
-        <div className="aspect-[3/4] border-8 border-white"></div>
-        <div className="aspect-[3/4] border-8 border-white"></div>
-        <div className="aspect-[3/4] border-8 border-white"></div>
-        <div className="aspect-[3/4] border-8 border-white"></div>
-        <div className="aspect-[3/4] border-8 border-white"></div>
-        <div className="aspect-[3/4] border-8 border-white"></div>
-        <div className="aspect-[3/4] border-8 border-white"></div>
-        <div className="aspect-[3/4] border-8 border-white"></div>
-        <div className="aspect-[3/4] border-8 border-white"></div>
-        <div className="aspect-[3/4] border-8 border-white"></div>
+      <section className="">
+        <div className="mx-auto hidden max-w-screen-xl auto-rows-auto gap-4 p-8 lg:grid lg:grid-cols-4 lg:px-0">
+          {imagePlaceholders?.map((placeholder) => (
+            <div
+              className="aspect-[3/4] border-8 border-white"
+              key={placeholder.name}
+            >
+              {placeholder.name}
+            </div>
+          ))}
+          <div className="aspect-[3/4]">Buy NFTs</div>
+        </div>
+
+        <div className="mx-auto grid auto-rows-auto gap-4 p-8 lg:hidden lg:px-0">
+          {imagePlaceholders?.slice(0, visible).map((placeholder) => (
+            <div
+              className="aspect-[3/4] border-8 border-white"
+              key={placeholder.name}
+            >
+              {placeholder.name}
+            </div>
+          ))}
+          <button
+            className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]"
+            onClick={showMoreItems}
+          >
+            Load More
+          </button>
+          <div className="flex justify-center">
+            <SingleToaster />
+          </div>
+          <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]">
+            Buy <strong>NFTs</strong>
+          </button>
+        </div>
       </section>
 
       <section className="overflow-hidden py-8">
         <div className="bg-[#2B5C71] py-8">
           <div className="img-ticker -mx-8 flex">
-            <h3 className="mx-8 flex-none self-start text-[150px] font-black leading-[0.80] tracking-tight drop-shadow-[0_3px_16px_#0D0A0A]">
+            <h3 className="mx-8 flex-none self-start text-[40px] font-black leading-[0.80] tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:text-[150px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
               All GLOBAL TOASTER CLUB NFTS ARE 1 OFF
               <span className="text-secondary">.</span>
             </h3>
-            <h3 className="mx-8 flex-none self-start text-[150px] font-black leading-[0.80] tracking-tight drop-shadow-[0_3px_16px_#0D0A0A]">
+            <h3 className="mx-8 flex-none self-start text-[40px] font-black leading-[0.80] tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:text-[150px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
               All GLOBAL TOASTER CLUB NFTS ARE 1 OFF
               <span className="text-secondary">.</span>
             </h3>
-            <h3 className="mx-8 flex-none self-start text-[150px] font-black leading-[0.80] tracking-tight drop-shadow-[0_3px_16px_#0D0A0A]">
+            <h3 className="mx-8 flex-none self-start text-[40px] font-black leading-[0.80] tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:text-[150px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
               All GLOBAL TOASTER CLUB NFTS ARE 1 OFF
               <span className="text-secondary">.</span>
             </h3>
@@ -69,22 +124,43 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-screen-xl auto-rows-auto grid-cols-3 gap-4 py-8">
-        <div className="aspect-[4/3] border-8 border-white"></div>
-        <div className="aspect-[4/3] border-8 border-white"></div>
-        <div className="aspect-[4/3] border-8 border-white"></div>
-        <div className="aspect-[4/3] border-8 border-white"></div>
-        <div className="aspect-[4/3] border-8 border-white"></div>
-        <div className="aspect-[4/3] border-8 border-white"></div>
+      <section className="">
+        <div className="mx-auto hidden max-w-screen-xl auto-rows-auto gap-4 p-8 lg:grid lg:grid-cols-3 lg:px-0">
+          {imagePlaceholders?.map((placeholder) => (
+            <div
+              className="aspect-[4/3] border-8 border-white"
+              key={placeholder.name}
+            >
+              {placeholder.name}
+            </div>
+          ))}
+        </div>
+
+        <div className="mx-auto grid auto-rows-auto gap-4 p-8 lg:hidden lg:px-0">
+          {imagePlaceholders?.slice(0, visibleOther).map((placeholder) => (
+            <div
+              className="aspect-[4/3] border-8 border-white"
+              key={placeholder.name}
+            >
+              {placeholder.name}
+            </div>
+          ))}
+          <button
+            className="my-8 mx-auto w-full max-w-[200px] rounded-md border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]"
+            onClick={showMoreItemsOther}
+          >
+            Load All
+          </button>
+        </div>
       </section>
 
       <section className="relative my-16">
         <div className="mx-auto flex max-w-screen-lg flex-row before:absolute before:right-0 before:-bottom-12 before:z-[-1] before:h-[489px] before:w-[1440px] before:bg-gradient-to-r before:from-[#EEB5AB00] before:to-[#EEB5AB]">
-          <div>
+          <div className="hidden w-1/2 md:block lg:w-full">
             <Toaster />
           </div>
-          <div>
-            <div className="relative -left-24">
+          <div className="w-full overflow-hidden lg:w-1/2 lg:overflow-visible lg:pl-12 xl:w-full">
+            <div className="relative -left-16 lg:-left-24">
               <CtaBubble />
             </div>
             <p className="px-10 text-2xl text-black">
@@ -96,10 +172,10 @@ const Index = () => {
       </section>
 
       <section className="py-8">
-        <h3 className="mx-auto max-w-screen-xl text-center text-[170px] font-black tracking-tight drop-shadow-[0_3px_16px_#0D0A0A]">
+        <h3 className="mx-auto max-w-screen-xl text-center text-[45px] font-black tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:text-[170px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
           BACKGROUND
         </h3>
-        <div className="mx-auto max-w-screen-lg">
+        <div className="mx-auto max-w-screen-lg px-8">
           <p className="py-4">
             In the late 90&apos;s three like-minded individuals formed the{' '}
             <strong>‘Toasters’</strong>, and they promoted their graffiti
@@ -125,15 +201,15 @@ const Index = () => {
 
           <p className="py-4 font-bold text-secondary">We ask:</p>
 
-          <ul className="list-inside list-disc py-4 text-secondary">
-            <li className="indent-4">
+          <ul className="list-outside list-disc py-4 pl-5 text-secondary">
+            <li className="">
               Why do they only host with certain individuals, objects or
               landmarks?
             </li>
-            <li className="indent-4">
+            <li className="">
               Why do they migrate in flocks from city to city?
             </li>
-            <li className="indent-4">What do they want?</li>
+            <li className="">What do they want?</li>
           </ul>
 
           <p className="py-4">
@@ -180,26 +256,40 @@ const Index = () => {
       </section>
 
       <section>
-        <div className="mx-auto mt-[135px] max-w-[1440px] bg-gradient-to-t from-[#1D1D1B00] to-[#0d0a0aa8] px-20">
-          <div className="relative top-[-135px] mx-auto max-w-screen-xl">
-            <h3 className="text-center text-[170px] font-black tracking-tight drop-shadow-[0_3px_16px_#0D0A0A]">
+        <div className="mx-auto mt-[33px] max-w-[1440px] bg-[#0d0a0aa8] px-8 pb-8 lg:mt-[135px] lg:bg-inherit lg:bg-gradient-to-t lg:from-[#1D1D1B00] lg:to-[#0d0a0aa8] lg:px-20 lg:pb-0">
+          <div className="relative top-[-33px] mx-auto max-w-screen-xl lg:top-[-135px]">
+            <h3 className="text-center text-[45px] font-black tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:text-[170px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
               THE TEAM
             </h3>
-            <p className="mx-auto max-w-[739px] pb-16">
-              The 3J’s - our Toaster investigation team comprises of Jake, Jacob
-              and Joe. All 3 have had Toaster Takeovers this is what brought the
-              team together.{' '}
+            <p className="mx-auto max-w-[739px] pt-8 pb-16 text-center lg:pt-0 lg:text-left">
+              The <strong>3J’s</strong> - our Toaster investigation team
+              comprises of <strong>Jake</strong>, <strong>Jacob</strong>
+              and <strong>Joe</strong>. All 3 have had Toaster Takeovers this is
+              what brought the team together.{' '}
             </p>
             <div>
               <Swiper
-                modules={[Navigation, A11y]}
+                modules={[A11y]}
                 spaceBetween={0}
-                slidesPerView={3}
-                navigation
+                loop={true}
+                breakpoints={{
+                  // when window width is >= 320px
+                  320: {
+                    slidesPerView: 1,
+                  },
+                  // when window width is >= 480px
+                  768: {
+                    slidesPerView: 2,
+                  },
+                  // when window width is >= 640px
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                }}
               >
                 <SwiperSlide>
-                  <div className="mx-4 aspect-[3/4] border-8 border-white"></div>
-                  <div className="mt-10 grid gap-8 px-10 pt-2 pb-8 text-center">
+                  <div className="aspect-[3/4] border-8 border-white lg:mx-4"></div>
+                  <div className="mt-10 grid gap-8 px-0 pt-2 pb-8 text-center lg:px-10">
                     <h4 className="font-black text-secondary">Jake</h4>
 
                     <p>
@@ -213,8 +303,8 @@ const Index = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div className="mx-4 aspect-[3/4] border-8 border-white"></div>
-                  <div className="mt-10 grid gap-8 border-x border-x-secondary px-10 pt-2 pb-8 text-center">
+                  <div className="aspect-[3/4] border-8 border-white lg:mx-4"></div>
+                  <div className="mt-10 grid gap-8 px-0 pt-2 pb-8 text-center lg:border-x-2 lg:border-secondary lg:px-10">
                     <h4 className="font-black text-secondary">Jake</h4>
 
                     <p>
@@ -228,8 +318,8 @@ const Index = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div className="mx-4 aspect-[3/4] border-8 border-white"></div>
-                  <div className="mt-10 grid gap-8 px-10 pt-2 pb-8 text-center">
+                  <div className="aspect-[3/4] border-8 border-white lg:mx-4"></div>
+                  <div className="mt-10 grid gap-8 px-0 pt-2 pb-8 text-center lg:px-10">
                     <h4 className="font-black text-secondary">Jake</h4>
 
                     <p>
@@ -241,6 +331,11 @@ const Index = () => {
                     <p>Jake also looks after the technical needs of the GTC.</p>
                   </div>
                 </SwiperSlide>
+
+                <div className="absolute bottom-[265px] z-10 flex w-full justify-between text-secondary lg:hidden">
+                  <SwiperPrev />
+                  <SwiperNext />
+                </div>
               </Swiper>
             </div>
           </div>
@@ -248,9 +343,9 @@ const Index = () => {
       </section>
 
       <section className="bg-secondary">
-        <div className="mx-auto mt-[135px] max-w-[1440px] px-20">
+        <div className="mx-auto max-w-[1440px] px-8 pt-[95px] lg:mt-[135px] lg:px-20 lg:pt-0">
           <div className="relative top-[-135px] mx-auto max-w-screen-xl">
-            <h3 className="text-center text-[170px] font-black tracking-tight drop-shadow-[0_3px_16px_#0D0A0A]">
+            <h3 className="pb-8 text-center text-[45px] font-black tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:pb-0 lg:text-[170px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
               MERCH
             </h3>
             <div className="mx-auto grid max-w-[1096px] gap-8 pb-16 text-center text-black">
@@ -269,14 +364,24 @@ const Index = () => {
               <Swiper
                 modules={[Navigation, A11y]}
                 spaceBetween={0}
+                loop={true}
                 slidesPerView={2}
-                navigation
+                breakpoints={{
+                  // when window width is >= 320px
+                  320: {
+                    slidesPerView: 1,
+                  },
+                  // when window width is >= 480px
+                  768: {
+                    slidesPerView: 2,
+                  },
+                }}
               >
                 <SwiperSlide>
                   <img
                     src={`${router.basePath}/assets/images/tshirt-design-1.png`}
                     alt="Mock up A"
-                    className="border-r border-r-black"
+                    className="lg:border-r lg:border-r-black"
                   />
                   <div className="mt-10 grid gap-8 px-10 pt-2 pb-8 text-center text-black">
                     <p>
@@ -301,6 +406,11 @@ const Index = () => {
                     </p>
                   </div>
                 </SwiperSlide>
+
+                <div className="absolute bottom-[20px] z-10 flex w-full justify-between text-primary lg:hidden">
+                  <SwiperPrev />
+                  <SwiperNext />
+                </div>
               </Swiper>
             </div>
           </div>
@@ -308,9 +418,9 @@ const Index = () => {
       </section>
 
       <section>
-        <div className="mx-auto max-w-[1440px] bg-primary px-20 pb-10">
+        <div className="mx-auto max-w-[1440px] bg-primary px-8 pt-[100px] lg:px-20 lg:pt-0 lg:pb-10">
           <div className="relative top-[-135px] mx-auto max-w-screen-xl">
-            <h3 className="text-center text-[170px] font-black tracking-tight drop-shadow-[0_3px_16px_#0D0A0A]">
+            <h3 className="pb-8 text-center text-[45px] font-black tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:pb-0 lg:text-[170px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
               SOCIAL
             </h3>
             <div className="mx-auto grid max-w-[1096px] gap-8 text-center text-secondary">
@@ -327,10 +437,10 @@ const Index = () => {
         </div>
       </section>
 
-      <section>
-        <div className="mx-auto max-w-[1440px] bg-[#2B5C71] px-20">
-          <div className="relative top-[-135px] mx-auto max-w-screen-xl text-center">
-            <h3 className="text-[170px] font-black tracking-tight drop-shadow-[0_3px_16px_#0D0A0A]">
+      <section className="bg-[#2B5C71]">
+        <div className="mx-auto max-w-[1440px] px-8 pt-[140px] lg:px-20 lg:pt-10">
+          <div className="relative top-[-175px] mx-auto h-[550px] max-w-screen-xl text-center lg:h-auto">
+            <h3 className="pb-8 text-[45px] font-black tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:pb-0 lg:text-[170px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
               DROPS
             </h3>
             <div className="mx-auto mb-8 max-w-[1096px] text-black">
@@ -340,7 +450,12 @@ const Index = () => {
               </p>
               <p>We have a some advance sales here.</p>
             </div>
-            <Link href="/">Buy NFTs</Link>
+            <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]">
+              Buy <strong>NFTs</strong>
+            </button>
+            <div className="flex justify-center pt-8 lg:pt-0">
+              <SingleToaster />
+            </div>
           </div>
         </div>
       </section>

@@ -4,8 +4,7 @@ import * as React from 'react';
 const Toaster = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={604}
-    height={585}
+    viewBox="0, 0, 604, 585"
     fill="none"
     {...props}
   >

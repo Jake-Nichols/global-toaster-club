@@ -23,6 +23,19 @@ strong {
   }
 }
 
+@keyframes ticker-fk {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-2487px, 0, 0);
+  }
+}
+
 .img-ticker {
-  animation: ticker-kf 35s linear infinite;
+  animation: ticker-fk 20s linear infinite;
+  @media (min-width: 1024px) {
+    animation: ticker-kf 35s linear infinite;
+  }
 }
