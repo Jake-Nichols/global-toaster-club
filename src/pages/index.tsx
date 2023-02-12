@@ -1,6 +1,7 @@
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -14,54 +15,12 @@ import SwiperPrev from '@/components/SwiperPrev';
 import Toaster from '@/components/Toaster';
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
+import { BottomImages } from '@/utils/BottomImages';
+import { TeamImages } from '@/utils/TeamImages';
+import { TopImages } from '@/utils/TopImages';
 
 const Index = () => {
   const router = useRouter();
-
-  const imagePlaceholders = [
-    {
-      id: '1',
-      src: '/images/100p.jpeg',
-      name: 'NFT 1',
-      category: 'Groceries',
-    },
-    {
-      id: '2',
-      src: '/images/Ajinomoto.jpeg',
-      name: 'NFT 2',
-      category: 'Groceries',
-    },
-    {
-      id: '3',
-      src: '/images/Almondnuts.jpg',
-      name: 'NFT 3',
-      category: 'Groceries',
-    },
-    {
-      id: '3',
-      src: '/images/Almondnuts.jpg',
-      name: 'NFT 3',
-      category: 'Groceries',
-    },
-    {
-      id: '3',
-      src: '/images/Almondnuts.jpg',
-      name: 'NFT 3',
-      category: 'Groceries',
-    },
-    {
-      id: '3',
-      src: '/images/Almondnuts.jpg',
-      name: 'NFT 3',
-      category: 'Groceries',
-    },
-    {
-      id: '3',
-      src: '/images/Almondnuts.jpg',
-      name: 'NFT 3',
-      category: 'Groceries',
-    },
-  ];
 
   const [visible, setVisible] = useState(7);
   const [visibleOther, setVisibleOther] = useState(2);
@@ -96,12 +55,12 @@ const Index = () => {
           <div className="absolute left-[-475px] top-[235px] -scale-x-100">
             <SingleToaster />
           </div>
-          {imagePlaceholders?.map((placeholder) => (
+          {TopImages.images?.map((placeholder) => (
             <div
-              className="aspect-[3/4] border-8 border-white"
-              key={placeholder.name}
+              className="aspect-[3/4]"
+              key={placeholder.name + placeholder.drop}
             >
-              {placeholder.name}
+              <Image src={placeholder.src} alt={placeholder.name} />
             </div>
           ))}
           <div id="buy" className="flex flex-col items-end">
@@ -115,12 +74,12 @@ const Index = () => {
         </div>
 
         <div className="mx-auto grid auto-rows-auto gap-4 p-8 lg:hidden lg:px-0">
-          {imagePlaceholders?.slice(0, visible).map((placeholder) => (
+          {TopImages.images?.slice(0, visible).map((placeholder) => (
             <div
-              className="aspect-[3/4] border-8 border-white"
-              key={placeholder.name}
+              className="aspect-[3/4]"
+              key={placeholder.name + placeholder.drop}
             >
-              {placeholder.name}
+              <Image src={placeholder.src} alt={placeholder.name} />
             </div>
           ))}
           <button
@@ -159,23 +118,23 @@ const Index = () => {
 
       <section className="">
         <div className="mx-auto hidden max-w-screen-xl auto-rows-auto gap-4 p-8 lg:grid lg:grid-cols-3 lg:px-0">
-          {imagePlaceholders?.map((placeholder) => (
+          {BottomImages.images?.map((placeholder) => (
             <div
-              className="aspect-[4/3] border-8 border-white"
-              key={placeholder.name}
+              className="aspect-[4/3]"
+              key={placeholder.name + placeholder.drop}
             >
-              {placeholder.name}
+              <Image src={placeholder.src} alt={placeholder.name} />
             </div>
           ))}
         </div>
 
         <div className="mx-auto grid auto-rows-auto gap-4 p-8 lg:hidden lg:px-0">
-          {imagePlaceholders?.slice(0, visibleOther).map((placeholder) => (
+          {BottomImages.images?.slice(0, visibleOther).map((placeholder) => (
             <div
-              className="aspect-[4/3] border-8 border-white"
-              key={placeholder.name}
+              className="aspect-[4/3]"
+              key={placeholder.name + placeholder.drop}
             >
-              {placeholder.name}
+              <Image src={placeholder.src} alt={placeholder.name} />
             </div>
           ))}
           <button
@@ -308,7 +267,7 @@ const Index = () => {
             </h3>
             <p className="mx-auto max-w-[739px] pt-8 pb-16 text-center lg:pt-0 lg:text-left">
               The <strong>3J’s</strong> - our Toaster investigation team
-              comprises of <strong>Jake</strong>, <strong>Jacob</strong>
+              comprises of <strong>Jake</strong>, <strong>Jacob </strong>
               and <strong>Joe</strong>. All 3 have had Toaster Takeovers this is
               what brought the team together.{' '}
             </p>
@@ -329,7 +288,14 @@ const Index = () => {
                 }}
               >
                 <SwiperSlide>
-                  <div className="aspect-[3/4] border-8 border-white lg:mx-4"></div>
+                  {TeamImages.images[0] && (
+                    <div className="aspect-[3/4] lg:mx-4">
+                      <Image
+                        src={TeamImages.images[0].src}
+                        alt={TeamImages.images[0].name}
+                      />
+                    </div>
+                  )}
                   <div className="mt-10 grid gap-8 px-0 pt-2 pb-8 text-center lg:px-10">
                     <div className="z-10 flex w-full items-center justify-between text-secondary md:hidden lg:hidden">
                       <SwiperPrev />
@@ -352,7 +318,14 @@ const Index = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div className="aspect-[3/4] border-8 border-white lg:mx-4"></div>
+                  {TeamImages.images[1] && (
+                    <div className="aspect-[3/4] lg:mx-4">
+                      <Image
+                        src={TeamImages.images[1].src}
+                        alt={TeamImages.images[1].name}
+                      />
+                    </div>
+                  )}
                   <div className="mt-10 grid gap-8 px-0 pt-2 pb-8 text-center lg:border-x-2 lg:border-secondary lg:px-10">
                     <div className="z-10 flex w-full items-center justify-between text-secondary md:hidden lg:hidden">
                       <SwiperPrev />
@@ -361,21 +334,30 @@ const Index = () => {
                     </div>
 
                     <h4 className="hidden font-black text-secondary md:block">
-                      Jake
+                      Jacob
                     </h4>
 
                     <p>
-                      Apart from having the amazing ability eat a mountain and
-                      stay as skinny as a rake. Jake’s keen eye for detail makes
-                      him a great researcher, authenticator and drop selector.
+                      Jacob loves his Reggae and runs a couple of sound systems
+                      - when not buying records.
                     </p>
 
-                    <p>Jake also looks after the technical needs of the GTC.</p>
+                    <p>
+                      He’s our events organiser and create thinker responsible
+                      for merch, publishing and drop selection.
+                    </p>
                   </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div className="aspect-[3/4] border-8 border-white lg:mx-4"></div>
+                  {TeamImages.images[2] && (
+                    <div className="aspect-[3/4] lg:mx-4">
+                      <Image
+                        src={TeamImages.images[2].src}
+                        alt={TeamImages.images[2].name}
+                      />
+                    </div>
+                  )}
                   <div className="mt-10 grid gap-8 px-0 pt-2 pb-8 text-center lg:px-10">
                     <div className="z-10 flex w-full items-center justify-between text-secondary md:hidden lg:hidden">
                       <SwiperPrev />
@@ -384,16 +366,15 @@ const Index = () => {
                     </div>
 
                     <h4 className="hidden font-black text-secondary md:block">
-                      Jake
+                      Joe
                     </h4>
 
+                    <p>Joe loves a good moan (apparently).</p>
                     <p>
-                      Apart from having the amazing ability eat a mountain and
-                      stay as skinny as a rake. Jake’s keen eye for detail makes
-                      him a great researcher, authenticator and drop selector.
+                      Original founder of GTC that proudly brought Jake and
+                      Jacob to the team.
                     </p>
-
-                    <p>Jake also looks after the technical needs of the GTC.</p>
+                    <p>Helps with research, creative and drop selection.</p>
                   </div>
                 </SwiperSlide>
               </Swiper>
@@ -403,7 +384,7 @@ const Index = () => {
       </section>
 
       <section className="bg-secondary">
-        <div className="mx-auto max-w-[1440px] bg-[url('/assets/images/background-background.png')] bg-[length:140%] bg-bottom bg-no-repeat px-8 pt-[95px] lg:mt-[135px] lg:bg-[length:33%] lg:bg-repeat-x lg:px-20 lg:pt-0">
+        <div className="mx-auto max-w-[1440px] bg-[url('/assets/images/background-background.png')] bg-[length:140%] bg-bottom bg-no-repeat px-8 pt-[95px] lg:mt-[135px] lg:bg-[length:33%] lg:bg-center lg:bg-repeat-x lg:px-20 lg:pt-0">
           <div
             id="merch"
             className="relative top-[-135px] mx-auto max-w-screen-xl"
