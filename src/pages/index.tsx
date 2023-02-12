@@ -3,7 +3,6 @@ import 'swiper/css/navigation';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { A11y, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,12 +15,11 @@ import Toaster from '@/components/Toaster';
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 import { BottomImages } from '@/utils/BottomImages';
+import { MerchImages } from '@/utils/MerchImages';
 import { TeamImages } from '@/utils/TeamImages';
 import { TopImages } from '@/utils/TopImages';
 
 const Index = () => {
-  const router = useRouter();
-
   const [visible, setVisible] = useState(7);
   const [visibleOther, setVisibleOther] = useState(2);
 
@@ -422,11 +420,12 @@ const Index = () => {
                 }}
               >
                 <SwiperSlide>
-                  <img
-                    src={`${router.basePath}/assets/images/tshirt-design-1.png`}
-                    alt="Mock up A"
-                    className="lg:border-r lg:border-r-black"
-                  />
+                  {MerchImages.images[0] && (
+                    <Image
+                      src={MerchImages.images[0].src}
+                      alt={MerchImages.images[0].id}
+                    />
+                  )}
                   <div className="mt-10 grid gap-8 px-10 pt-2 pb-8 text-center text-black">
                     <p>
                       Set A:
@@ -437,11 +436,12 @@ const Index = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <img
-                    src={`${router.basePath}/assets/images/tshirt-design-1.png`}
-                    alt="Mock up A"
-                    className=""
-                  />
+                  {MerchImages.images[1] && (
+                    <Image
+                      src={MerchImages.images[1].src}
+                      alt={MerchImages.images[1].id}
+                    />
+                  )}
                   <div className="mt-10 grid gap-8 px-10 pt-2 pb-8 text-center text-black">
                     <p>
                       Set B:
