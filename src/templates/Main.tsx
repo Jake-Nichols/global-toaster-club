@@ -99,6 +99,7 @@ const Main = (props: IMainProps) => {
                     <Link href="/" className="text-secondary">
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[-35%]">
                         <Logo />
+                        <div className="sr-only">Global Toaster Club Logo</div>
                       </div>
                     </Link>
                   </li>
