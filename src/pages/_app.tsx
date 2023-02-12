@@ -1,6 +1,7 @@
 import '../styles/global.css';
 
 import { Roboto_Slab } from '@next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 import type { AppProps } from 'next/app';
 
 const robotoSlab = Roboto_Slab({ subsets: ['latin'] });
@@ -14,6 +15,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
       }
     `}</style>
     <Component {...pageProps} />
+    <Analytics />
   </>
 );
 

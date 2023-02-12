@@ -1,6 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
-import { AnalyticsWrapper } from '@/components/Analytics';
 import { AppConfig } from '@/utils/AppConfig';
 
 // Need to create a custom _document because i18n support is not compatible with `next export`.
@@ -13,7 +12,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <AnalyticsWrapper />
         </body>
       </Html>
     );
