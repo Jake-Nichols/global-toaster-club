@@ -197,7 +197,7 @@ const Index = () => {
           </p>
 
           <p className="py-4">
-            We believe these early images to be the of the
+            We believe these early images to be the inspiration behind the
             <span className="font-bold text-secondary">
               ‘Toaster Takeovers’
             </span>{' '}
