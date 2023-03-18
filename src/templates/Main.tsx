@@ -12,26 +12,35 @@ type IMainProps = {
 
 const Main = (props: IMainProps) => {
   const [navbar, setNavbar] = useState(false);
+  const [scroll, setScroll] = useState(false);
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 50);
+    });
+  }, []);
 
   return (
-    <div className="w-full text-gray-100 antialiased">
+    <div className="w-full pt-40 antialiased text-gray-100">
       {props.meta}
 
-      <header className="z-10 w-full bg-black/10">
+      <header className="fixed top-0 z-10 w-full bg-[#1f4453]">
         <nav className="w-full">
-          <div className="mx-auto justify-between px-4 lg:max-w-screen-xl lg:justify-center">
+          <div className="justify-between px-4 mx-auto lg:max-w-screen-xl lg:justify-center">
             <div className="lg:hidden">
               <div className="flex flex-col items-center justify-between py-3 lg:block lg:flex-row lg:py-5">
-                <Logo />
+                <div className="w-full max-w-[100px]">
+                  <Logo />
+                </div>
                 <div>
                   <button
-                    className="rounded-md border border-transparent p-2 text-secondary outline-none focus:border focus:border-secondary"
+                    className="p-2 border border-transparent rounded-md outline-none text-secondary focus:border focus:border-secondary"
                     onClick={() => setNavbar(!navbar)}
                   >
                     {navbar ? (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-12 w-12 text-secondary"
+                        className="w-12 h-12 text-secondary"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -44,7 +53,7 @@ const Main = (props: IMainProps) => {
                     ) : (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-12 w-12 text-secondary"
+                        className="w-12 h-12 text-secondary"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -67,7 +76,11 @@ const Main = (props: IMainProps) => {
                   navbar ? 'block' : 'hidden'
                 }`}
               >
-                <ul className="items-center justify-center space-y-4 text-center text-2xl lg:grid lg:h-[157px] lg:grid-cols-7 lg:gap-6 lg:space-y-0">
+                <ul
+                  className={`h-full items-center justify-center space-y-4 text-center text-2xl transition-all lg:grid lg:grid-cols-7 lg:gap-6 lg:space-y-0 ${
+                    scroll ? 'lg:h-[107px]' : 'lg:h-[157px]'
+                  }`}
+                >
                   <li className="">
                     <Link
                       href="#buy"
@@ -97,7 +110,13 @@ const Main = (props: IMainProps) => {
                   </li>
                   <li className="relative hidden px-20 lg:block">
                     <Link href="/" className="text-secondary">
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[-35%]">
+                      <div
+                        className={`absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[-35%] transition-all ${
+                          scroll
+                            ? 'md:w-[50px] lg:w-[125px]'
+                            : 'md:w-[100px] lg:w-[200px]'
+                        }`}
+                      >
                         <Logo />
                         <div className="sr-only">Global Toaster Club Logo</div>
                       </div>
@@ -139,7 +158,7 @@ const Main = (props: IMainProps) => {
 
       <main className="text-xl">{props.children}</main>
 
-      <footer className="bg-black p-8 text-right text-xs text-secondary lg:px-20">
+      <footer className="p-8 text-xs text-right bg-black text-secondary lg:px-20">
         © {AppConfig.title} {new Date().getFullYear()}
         {/* <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>. */}
         {/*

@@ -13,6 +13,21 @@ strong {
   @apply font-black;
 }
 
+header {
+  filter: drop-shadow(0rem 0rem .5rem rgba(0, 0, 0, 0.8));
+}
+
+#buy,
+#background,
+#team,
+#merch,
+#social,
+#drops
+ {
+  scroll-margin-top: 100px;
+  scroll-snap-margin-top: 100px; /* iOS 11 and older */
+}
+
 @tailwind components;
 
 @tailwind utilities;
@@ -23,7 +38,7 @@ strong {
   }
 
   100% {
-    transform: translate3d(-9327px, 0, 0);
+    transform: translate3d(-17814px, 0, 0);
   }
 }
 
@@ -33,13 +48,13 @@ strong {
   }
 
   100% {
-    transform: translate3d(-2487px, 0, 0);
+    transform: translate3d(-7000px, 0, 0);
   }
 }
 
 .img-ticker {
-  animation: ticker-fk 20s linear infinite;
+  animation: ticker-fk 25s linear infinite;
   @media (min-width: 1024px) {
-    animation: ticker-kf 35s linear infinite;
+    animation: ticker-kf 40s linear infinite;
   }
 }

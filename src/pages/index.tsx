@@ -65,7 +65,7 @@ const Index = () => {
             <div className="flex w-full justify-center pt-8 lg:pt-0">
               <SingleToaster />
             </div>
-            <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:drop-shadow-[0px_4px_8px_#00000080] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]">
+            <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-secondary/90 hover:drop-shadow-[0px_4px_8px_#00000080]  focus:drop-shadow-[0px_4px_8px_#00000080]">
               Buy <strong>NFTs</strong>
             </button>
           </div>
@@ -81,7 +81,7 @@ const Index = () => {
             </div>
           ))}
           <button
-            className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:drop-shadow-[0px_4px_8px_#00000080] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]"
+            className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-secondary/90 hover:drop-shadow-[0px_4px_8px_#00000080]  focus:drop-shadow-[0px_4px_8px_#00000080]"
             onClick={showMoreItems}
           >
             Load More
@@ -89,7 +89,7 @@ const Index = () => {
           <div id="buy" className="flex justify-center">
             <SingleToaster />
           </div>
-          <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:drop-shadow-[0px_4px_8px_#00000080] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]">
+          <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-secondary/90 hover:drop-shadow-[0px_4px_8px_#00000080]  focus:drop-shadow-[0px_4px_8px_#00000080]">
             Buy <strong>NFTs</strong>
           </button>
         </div>
@@ -98,17 +98,14 @@ const Index = () => {
       <section className="overflow-hidden py-8">
         <div className="bg-[#2B5C71] py-8">
           <div className="img-ticker -mx-8 flex">
-            <h3 className="mx-8 flex-none self-start text-[40px] font-black leading-[0.80] tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:text-[150px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
-              All GLOBAL TOASTER CLUB NFTS ARE 1 OFF
-              <span className="text-secondary">.</span>
+            <h3 className="mx-8 flex-none self-start text-[40px] font-black uppercase leading-[0.80] tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:text-[150px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
+              All Global Toaster Club NFTs are one off originals!
             </h3>
-            <h3 className="mx-8 flex-none self-start text-[40px] font-black leading-[0.80] tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:text-[150px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
-              All GLOBAL TOASTER CLUB NFTS ARE 1 OFF
-              <span className="text-secondary">.</span>
+            <h3 className="mx-8 flex-none self-start text-[40px] font-black uppercase leading-[0.80] tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:text-[150px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
+              All Global Toaster Club NFTs are one off originals!
             </h3>
-            <h3 className="mx-8 flex-none self-start text-[40px] font-black leading-[0.80] tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:text-[150px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
-              All GLOBAL TOASTER CLUB NFTS ARE 1 OFF
-              <span className="text-secondary">.</span>
+            <h3 className="mx-8 flex-none self-start text-[40px] font-black uppercase leading-[0.80] tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:text-[150px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
+              All Global Toaster Club NFTs are one off originals!
             </h3>
           </div>
         </div>
@@ -136,7 +133,7 @@ const Index = () => {
             </div>
           ))}
           <button
-            className="my-8 mx-auto w-full max-w-[200px] rounded-md border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]"
+            className="my-8 mx-auto w-full max-w-[200px] rounded-md border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-secondary/90  focus:drop-shadow-[0px_4px_8px_#00000080]"
             onClick={showMoreItemsOther}
           >
             Load All
@@ -180,8 +177,7 @@ const Index = () => {
           </p>
 
           <p className="py-4">
-            We believe these early images to be the{' '}
-            <strong>origin/inspiration</strong> of the{' '}
+            We believe these early images to be the of the
             <span className="font-bold text-secondary">
               ‘Toaster Takeovers’
             </span>{' '}
@@ -227,9 +223,9 @@ const Index = () => {
 
           <p className="py-4">
             Keep safe and if you are taken over{' '}
-            <span className="text-secondary">remain calm</span>. You can still
-            work & play and rigorous global testing has revealed no side effects
-            what so ever.
+            <span className="text-white">remain calm</span>. You can still work
+            & play and rigorous global testing has revealed no side effects what
+            so ever.
           </p>
 
           <hr className="mt-2 mb-8 border-secondary" />
@@ -248,7 +244,7 @@ const Index = () => {
             original. To ensure your Rarity value.
           </p>
 
-          <div className="absolute right-[-579px] bottom-[-250px] hidden 2xl:block">
+          <div className="1xl:block absolute right-[-579px] bottom-[-250px] hidden animate-wiggle">
             <SingleToaster />
           </div>
         </div>
@@ -473,7 +469,11 @@ const Index = () => {
             <div className="mx-auto grid max-w-[1096px] gap-8 text-center text-secondary">
               <p>
                 Catch us on{' '}
-                <Link href="/" className="font-black text-white">
+                <Link
+                  href="https://www.instagram.com/global_toaster_club/"
+                  target="_blank"
+                  className="font-black text-white"
+                >
                   Instagram
                 </Link>{' '}
                 this is where we add the latest updates.
@@ -500,13 +500,13 @@ const Index = () => {
               </p>
               <p>We have a some advance sales here.</p>
             </div>
-            <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] focus:border-black focus:drop-shadow-[0px_4px_8px_#00000080]">
+            <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-secondary/90  focus:drop-shadow-[0px_4px_8px_#00000080]">
               Buy <strong>NFTs</strong>
             </button>
             <div className="flex justify-center pt-8 lg:hidden lg:pt-0">
               <SingleToaster />
             </div>
-            <div className="absolute top-0 right-[-10px] hidden w-full flex-col items-end justify-end px-32 lg:flex">
+            <div className="pointer-events-none absolute top-0 right-[-10px] hidden w-full flex-col items-end justify-end px-32 lg:flex">
               <div className="relative w-1/4">
                 <CtaBubble />
               </div>

@@ -1,6 +1,6 @@
-import Jake from 'public/assets/team/Team-42.jpg';
-import Jacob from 'public/assets/team/Team-43.jpg';
-import Joe from 'public/assets/team/Team-44.jpg';
+import Jacob from 'public/assets/team/jacob.jpg';
+import Jake from 'public/assets/team/jake.jpg';
+import Joe from 'public/assets/team/joe.jpg';
 
 export const TeamImages = {
   images: [
