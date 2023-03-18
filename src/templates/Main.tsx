@@ -20,18 +20,18 @@ const Main = (props: IMainProps) => {
     });
   }, []);
 
-  React.useEffect(() => {
-    const handleContextmenu = (e: { preventDefault: () => void }) => {
-      e.preventDefault();
-    };
-    document.addEventListener('contextmenu', handleContextmenu);
-    return function cleanup() {
-      document.removeEventListener('contextmenu', handleContextmenu);
-    };
-  }, []);
+  // React.useEffect(() => {
+  //   const handleContextmenu = (e: { preventDefault: () => void }) => {
+  //     e.preventDefault();
+  //   };
+  //   document.addEventListener('contextmenu', handleContextmenu);
+  //   return function cleanup() {
+  //     document.removeEventListener('contextmenu', handleContextmenu);
+  //   };
+  // }, []);
 
   return (
-    <div className="w-full pt-40 text-gray-100 antialiased">
+    <div className="w-full pt-40 antialiased text-gray-100">
       {props.meta}
 
       <header
@@ -40,7 +40,7 @@ const Main = (props: IMainProps) => {
         }`}
       >
         <nav className="w-full">
-          <div className="mx-auto justify-between px-4 lg:max-w-screen-xl lg:justify-center">
+          <div className="justify-between px-4 mx-auto lg:max-w-screen-xl lg:justify-center">
             <div className="lg:hidden">
               <div className="flex flex-col items-center justify-between py-3 lg:block lg:flex-row lg:py-5">
                 <div className="w-full max-w-[100px]">
@@ -48,13 +48,13 @@ const Main = (props: IMainProps) => {
                 </div>
                 <div>
                   <button
-                    className="rounded-md border border-transparent p-2 text-secondary outline-none focus:border focus:border-secondary"
+                    className="p-2 border border-transparent rounded-md outline-none text-secondary focus:border focus:border-secondary"
                     onClick={() => setNavbar(!navbar)}
                   >
                     {navbar ? (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-12 w-12 text-secondary"
+                        className="w-12 h-12 text-secondary"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -67,7 +67,7 @@ const Main = (props: IMainProps) => {
                     ) : (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-12 w-12 text-secondary"
+                        className="w-12 h-12 text-secondary"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -172,7 +172,7 @@ const Main = (props: IMainProps) => {
 
       <main className="text-xl">{props.children}</main>
 
-      <footer className="bg-black p-8 text-right text-xs text-secondary lg:px-20">
+      <footer className="p-8 text-xs text-right bg-black text-secondary lg:px-20">
         © {AppConfig.title} {new Date().getFullYear()}
         {/* <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>. */}
         {/*
