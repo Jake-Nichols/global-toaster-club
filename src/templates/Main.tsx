@@ -24,7 +24,11 @@ const Main = (props: IMainProps) => {
     <div className="w-full pt-40 antialiased text-gray-100">
       {props.meta}
 
-      <header className="fixed top-0 z-10 w-full bg-[#1f4453]">
+      <header
+        className={`fixed top-0 z-10 w-full bg-[#1f4453] ${
+          scroll ? 'scrolled' : ''
+        }`}
+      >
         <nav className="w-full">
           <div className="justify-between px-4 mx-auto lg:max-w-screen-xl lg:justify-center">
             <div className="lg:hidden">
