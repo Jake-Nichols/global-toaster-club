@@ -55,17 +55,20 @@ const Index = () => {
           </div>
           {TopImages.images?.map((placeholder) => (
             <div
-              className="aspect-[3/4]"
+              className="relative aspect-[3/4] overflow-hidden"
               key={placeholder.name + placeholder.drop}
             >
-              <Image src={placeholder.src} alt={placeholder.name} />
+              <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-full border-8"></div>
+              <div className="absolute top-0 left-0 h-full w-full transition-all hover:scale-125">
+                <Image src={placeholder.src} alt={placeholder.name} />
+              </div>
             </div>
           ))}
           <div id="buy" className="flex flex-col items-end">
             <div className="flex w-full justify-center pt-8 lg:pt-0">
               <SingleToaster />
             </div>
-            <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-secondary/90 hover:drop-shadow-[0px_4px_8px_#00000080]  focus:drop-shadow-[0px_4px_8px_#00000080]">
+            <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-black hover:bg-secondary/90 hover:text-secondary hover:drop-shadow-[0px_4px_8px_#00000080]  focus:drop-shadow-[0px_4px_8px_#00000080]">
               Buy <strong>NFTs</strong>
             </button>
           </div>
@@ -74,14 +77,17 @@ const Index = () => {
         <div className="mx-auto grid auto-rows-auto gap-4 p-8 lg:hidden lg:px-0">
           {TopImages.images?.slice(0, visible).map((placeholder) => (
             <div
-              className="aspect-[3/4]"
+              className="relative aspect-[3/4] overflow-hidden"
               key={placeholder.name + placeholder.drop}
             >
-              <Image src={placeholder.src} alt={placeholder.name} />
+              <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-full border-8"></div>
+              <div className="absolute top-0 left-0 h-full w-full transition-all hover:scale-125">
+                <Image src={placeholder.src} alt={placeholder.name} />
+              </div>
             </div>
           ))}
           <button
-            className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-secondary/90 hover:drop-shadow-[0px_4px_8px_#00000080]  focus:drop-shadow-[0px_4px_8px_#00000080]"
+            className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-black hover:bg-secondary/90 hover:text-secondary hover:drop-shadow-[0px_4px_8px_#00000080]  focus:drop-shadow-[0px_4px_8px_#00000080]"
             onClick={showMoreItems}
           >
             Load More
@@ -89,7 +95,7 @@ const Index = () => {
           <div id="buy" className="flex justify-center">
             <SingleToaster />
           </div>
-          <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-secondary/90 hover:drop-shadow-[0px_4px_8px_#00000080]  focus:drop-shadow-[0px_4px_8px_#00000080]">
+          <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-black hover:bg-secondary/90 hover:text-secondary hover:drop-shadow-[0px_4px_8px_#00000080]  focus:drop-shadow-[0px_4px_8px_#00000080]">
             Buy <strong>NFTs</strong>
           </button>
         </div>
@@ -115,10 +121,13 @@ const Index = () => {
         <div className="mx-auto hidden max-w-screen-xl auto-rows-auto gap-4 p-8 lg:grid lg:grid-cols-3 lg:px-0">
           {BottomImages.images?.map((placeholder) => (
             <div
-              className="aspect-[4/3]"
+              className="relative aspect-[4/3] overflow-hidden"
               key={placeholder.name + placeholder.drop}
             >
-              <Image src={placeholder.src} alt={placeholder.name} />
+              <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-full border-8"></div>
+              <div className="absolute top-0 left-0 h-full w-full transition-all hover:scale-125">
+                <Image src={placeholder.src} alt={placeholder.name} />
+              </div>
             </div>
           ))}
         </div>
@@ -126,14 +135,17 @@ const Index = () => {
         <div className="mx-auto grid auto-rows-auto gap-4 p-8 lg:hidden lg:px-0">
           {BottomImages.images?.slice(0, visibleOther).map((placeholder) => (
             <div
-              className="aspect-[4/3]"
+              className="relative aspect-[4/3] overflow-hidden"
               key={placeholder.name + placeholder.drop}
             >
-              <Image src={placeholder.src} alt={placeholder.name} />
+              <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-full border-8"></div>
+              <div className="absolute top-0 left-0 h-full w-full transition-all hover:scale-125">
+                <Image src={placeholder.src} alt={placeholder.name} />
+              </div>
             </div>
           ))}
           <button
-            className="my-8 mx-auto w-full max-w-[200px] rounded-md border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-secondary/90  focus:drop-shadow-[0px_4px_8px_#00000080]"
+            className="my-8 mx-auto w-full max-w-[200px] rounded-md border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-black hover:bg-secondary/90 hover:text-secondary  focus:drop-shadow-[0px_4px_8px_#00000080]"
             onClick={showMoreItemsOther}
           >
             Load All
@@ -230,18 +242,11 @@ const Index = () => {
 
           <hr className="mt-2 mb-8 border-secondary" />
 
-          <p>
-            All{' '}
-            <span className="font-black text-secondary">
-              Global Toaster Club NFTs
-            </span>{' '}
-            are one of originals artworks and we only issue single images we do
-            not duplicate artworks. Please double check before purchasing that
-            your Artwork is a{' '}
-            <span className="font-black text-secondary">
-              ‘Global Toaster Club’
-            </span>{' '}
-            original. To ensure your Rarity value.
+          <p className="text-secondary">
+            All Global Toaster Club NFTs are one of originals artworks and we
+            only issue single images we do not duplicate artwork. Please double
+            check before purchasing that your NFT is a ‘Global Toaster Club’
+            original to ensure your rarity value.
           </p>
 
           <div className="1xl:block absolute right-[-579px] bottom-[-250px] hidden animate-wiggle">
@@ -323,7 +328,7 @@ const Index = () => {
                   <div className="mt-10 grid gap-8 px-0 pt-2 pb-8 text-center lg:border-x-2 lg:border-secondary lg:px-10">
                     <div className="z-10 flex w-full items-center justify-between text-secondary md:hidden lg:hidden">
                       <SwiperPrev />
-                      <h4 className="font-black text-secondary">Jake</h4>
+                      <h4 className="font-black text-secondary">Jacob</h4>
                       <SwiperNext />
                     </div>
 
@@ -355,7 +360,7 @@ const Index = () => {
                   <div className="mt-10 grid gap-8 px-0 pt-2 pb-8 text-center lg:px-10">
                     <div className="z-10 flex w-full items-center justify-between text-secondary md:hidden lg:hidden">
                       <SwiperPrev />
-                      <h4 className="font-black text-secondary">Jake</h4>
+                      <h4 className="font-black text-secondary">Joe</h4>
                       <SwiperNext />
                     </div>
 
@@ -500,7 +505,7 @@ const Index = () => {
               </p>
               <p>We have a some advance sales here.</p>
             </div>
-            <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-secondary/90  focus:drop-shadow-[0px_4px_8px_#00000080]">
+            <button className="my-8 mx-auto w-full max-w-[200px] border-2 border-[#20222C4D] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-black hover:bg-secondary/90 hover:text-secondary  focus:drop-shadow-[0px_4px_8px_#00000080]">
               Buy <strong>NFTs</strong>
             </button>
             <div className="flex justify-center pt-8 lg:hidden lg:pt-0">

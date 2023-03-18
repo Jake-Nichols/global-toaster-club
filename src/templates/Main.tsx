@@ -20,12 +20,22 @@ const Main = (props: IMainProps) => {
     });
   }, []);
 
+  React.useEffect(() => {
+    const handleContextmenu = (e: { preventDefault: () => void }) => {
+      e.preventDefault();
+    };
+    document.addEventListener('contextmenu', handleContextmenu);
+    return function cleanup() {
+      document.removeEventListener('contextmenu', handleContextmenu);
+    };
+  }, []);
+
   return (
     <div className="w-full pt-40 text-gray-100 antialiased">
       {props.meta}
 
       <header
-        className={`fixed top-0 z-10 w-full bg-[#1f4453] ${
+        className={`fixed top-0 z-50 w-full bg-[#1f4453] ${
           scroll ? 'scrolled' : ''
         }`}
       >
