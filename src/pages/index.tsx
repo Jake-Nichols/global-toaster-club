@@ -35,17 +35,17 @@ const Index = () => {
     <Main
       meta={<Meta title="Global Toaster Club" description="Meta Description" />}
     >
-      <section className="max-w-screen-xl pt-8 mx-auto">
+      <section className="mx-auto max-w-screen-xl pt-8">
         <h1 className="mx-auto mt-8 text-center text-[74px] font-black leading-[0.80] tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:mt-16 lg:w-[900px] lg:text-[194px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
           GLOBAL TOASTER CLUB
         </h1>
-        <h2 className="py-8 text-xl font-black tracking-tight text-center lg:pt-16 lg:text-5xl">
+        <h2 className="py-8 text-center text-xl font-black tracking-tight lg:pt-16 lg:text-5xl">
           <span className="text-secondary">The London Drop</span> - Coming Soon
         </h2>
       </section>
 
       <section>
-        <div className="relative hidden max-w-screen-xl gap-4 p-8 mx-auto auto-rows-auto lg:grid lg:grid-cols-4 lg:px-0">
+        <div className="relative mx-auto hidden max-w-screen-xl auto-rows-auto gap-4 p-8 lg:grid lg:grid-cols-4 lg:px-0">
           <div className="absolute left-[-150px] top-[-150px] -scale-x-100">
             <SingleToaster />
           </div>
@@ -58,14 +58,14 @@ const Index = () => {
               className="relative aspect-[3/4] overflow-hidden"
               key={placeholder.name + placeholder.drop}
             >
-              <div className="absolute top-0 left-0 z-10 w-full h-full border-8 pointer-events-none"></div>
+              <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-full border-8"></div>
               <div className="absolute top-0 left-0 h-full w-full transition-all hover:scale-[1.1]">
                 <Image src={placeholder.src} alt={placeholder.name} />
               </div>
             </div>
           ))}
           <div id="buy" className="flex flex-col items-end">
-            <div className="flex justify-center w-full pt-8 lg:pt-0">
+            <div className="flex w-full justify-center pt-8 lg:pt-0">
               <SingleToaster />
             </div>
             <button className="my-8 mx-auto w-full max-w-[200px]  bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-black  hover:text-secondary hover:drop-shadow-[0px_4px_8px_#00000080]  focus:drop-shadow-[0px_4px_8px_#00000080]">
@@ -74,13 +74,13 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="grid gap-4 p-8 mx-auto auto-rows-auto lg:hidden lg:px-0">
+        <div className="mx-auto grid auto-rows-auto gap-4 p-8 lg:hidden lg:px-0">
           {TopImages.images?.slice(0, visible).map((placeholder) => (
             <div
               className="relative aspect-[3/4] overflow-hidden"
               key={placeholder.name + placeholder.drop}
             >
-              <div className="absolute top-0 left-0 z-10 w-full h-full border-8 pointer-events-none"></div>
+              <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-full border-8"></div>
               <div className="absolute top-0 left-0 h-full w-full transition-all hover:scale-[1.1]">
                 <Image src={placeholder.src} alt={placeholder.name} />
               </div>
@@ -101,9 +101,9 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-8 overflow-hidden">
+      <section className="overflow-hidden py-8">
         <div className="bg-[#2B5C71] py-8">
-          <div className="flex -mx-8 img-ticker">
+          <div className="img-ticker -mx-8 flex">
             <h3 className="mx-8 flex-none self-start text-[40px] font-black uppercase leading-[0.80] tracking-tight drop-shadow-[0_1px_6px_#0D0A0A] lg:text-[150px] lg:drop-shadow-[0_3px_16px_#0D0A0A]">
               All Global Toaster Club NFTs are one off originals!
             </h3>
@@ -118,13 +118,13 @@ const Index = () => {
       </section>
 
       <section className="">
-        <div className="hidden max-w-screen-xl gap-4 p-8 mx-auto auto-rows-auto lg:grid lg:grid-cols-3 lg:px-0">
+        <div className="mx-auto hidden max-w-screen-xl auto-rows-auto gap-4 p-8 lg:grid lg:grid-cols-3 lg:px-0">
           {BottomImages.images?.map((placeholder) => (
             <div
               className="relative aspect-[4/3] overflow-hidden"
               key={placeholder.name + placeholder.drop}
             >
-              <div className="absolute top-0 left-0 z-10 w-full h-full border-8 pointer-events-none"></div>
+              <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-full border-8"></div>
               <div className="absolute top-0 left-0 h-full w-full transition-all hover:scale-[1.1]">
                 <Image
                   src={placeholder.src}
@@ -136,13 +136,13 @@ const Index = () => {
           ))}
         </div>
 
-        <div className="grid gap-4 p-8 mx-auto auto-rows-auto lg:hidden lg:px-0">
+        <div className="mx-auto grid auto-rows-auto gap-4 p-8 lg:hidden lg:px-0">
           {BottomImages.images?.slice(0, visibleOther).map((placeholder) => (
             <div
               className="relative aspect-[4/3] overflow-hidden"
               key={placeholder.name + placeholder.drop}
             >
-              <div className="absolute top-0 left-0 z-10 w-full h-full border-8 pointer-events-none"></div>
+              <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-full border-8"></div>
               <div className="absolute top-0 left-0 h-full w-full transition-all hover:scale-[1.1]">
                 <Image
                   src={placeholder.src}
@@ -212,7 +212,7 @@ const Index = () => {
 
           <p className="py-4 font-bold text-secondary">We ask:</p>
 
-          <ul className="py-4 pl-5 list-disc list-outside text-secondary">
+          <ul className="list-outside list-disc py-4 pl-5 text-secondary">
             <li className="">
               Why do they only host with certain individuals, objects or
               landmarks?
@@ -303,8 +303,8 @@ const Index = () => {
                       />
                     </div>
                   )}
-                  <div className="grid gap-8 px-0 pt-2 pb-8 mt-10 text-center lg:px-10">
-                    <div className="z-10 flex items-center justify-between w-full text-secondary md:hidden lg:hidden">
+                  <div className="mt-10 grid gap-8 px-0 pt-2 pb-8 text-center lg:px-10">
+                    <div className="z-10 flex w-full items-center justify-between text-secondary md:hidden lg:hidden">
                       <SwiperPrev />
                       <h4 className="font-black text-secondary">Jake</h4>
                       <SwiperNext />
@@ -333,8 +333,8 @@ const Index = () => {
                       />
                     </div>
                   )}
-                  <div className="grid gap-8 px-0 pt-2 pb-8 mt-10 text-center lg:border-x-2 lg:border-secondary lg:px-10">
-                    <div className="z-10 flex items-center justify-between w-full text-secondary md:hidden lg:hidden">
+                  <div className="mt-10 grid gap-8 px-0 pt-2 pb-8 text-center lg:border-x-2 lg:border-secondary lg:px-10">
+                    <div className="z-10 flex w-full items-center justify-between text-secondary md:hidden lg:hidden">
                       <SwiperPrev />
                       <h4 className="font-black text-secondary">Jacob</h4>
                       <SwiperNext />
@@ -365,8 +365,8 @@ const Index = () => {
                       />
                     </div>
                   )}
-                  <div className="grid gap-8 px-0 pt-2 pb-8 mt-10 text-center lg:px-10">
-                    <div className="z-10 flex items-center justify-between w-full text-secondary md:hidden lg:hidden">
+                  <div className="mt-10 grid gap-8 px-0 pt-2 pb-8 text-center lg:px-10">
+                    <div className="z-10 flex w-full items-center justify-between text-secondary md:hidden lg:hidden">
                       <SwiperPrev />
                       <h4 className="font-black text-secondary">Joe</h4>
                       <SwiperNext />
@@ -435,7 +435,7 @@ const Index = () => {
                       alt={MerchImages.images[0].id}
                     />
                   )}
-                  <div className="grid gap-8 px-10 pt-2 pb-8 mt-10 text-center text-black">
+                  <div className="mt-10 grid gap-8 px-10 pt-2 pb-8 text-center text-black">
                     <p>
                       Set A:
                       <br />
@@ -451,7 +451,7 @@ const Index = () => {
                       alt={MerchImages.images[1].id}
                     />
                   )}
-                  <div className="grid gap-8 px-10 pt-2 pb-8 mt-10 text-center text-black">
+                  <div className="mt-10 grid gap-8 px-10 pt-2 pb-8 text-center text-black">
                     <p>
                       Set B:
                       <br />
@@ -513,17 +513,17 @@ const Index = () => {
               </p>
               <p>We have a some advance sales here.</p>
             </div>
-            <button className="my-8 mx-auto w-full max-w-[200px]  bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-black  hover:text-secondary  focus:drop-shadow-[0px_4px_8px_#00000080]">
+            <button className="relative z-20 my-8 mx-auto w-full max-w-[200px] bg-secondary py-2 font-bold text-black drop-shadow-[0px_4px_8px_#00000060] hover:animate-wiggle hover:bg-black  hover:text-secondary  focus:drop-shadow-[0px_4px_8px_#00000080]">
               Buy <strong>NFTs</strong>
             </button>
             <div className="flex justify-center pt-8 lg:hidden lg:pt-0">
               <SingleToaster />
             </div>
-            <div className="pointer-events-none absolute top-0 right-[-10px] hidden w-full flex-col items-end justify-end px-32 lg:flex">
+            <div className="absolute top-0 right-[-10px] hidden w-full flex-col items-end justify-end px-32 lg:flex">
               <div className="relative w-1/4">
                 <CtaBubble />
               </div>
-              <div className="flex justify-center w-1/4">
+              <div className="flex w-1/4 justify-center">
                 <SingleToaster />
               </div>
             </div>

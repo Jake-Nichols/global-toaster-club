@@ -6,6 +6,7 @@ const CtaBubble = (props: SVGProps<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0, 0, 522, 467"
     fill="none"
+    className="hover:animate-wiggle"
     {...props}
   >
     <path
